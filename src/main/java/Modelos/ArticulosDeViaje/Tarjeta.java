@@ -15,10 +15,10 @@ import java.io.Serializable;
 public class Tarjeta implements Serializable {
     
     private EstadoTarjeta estado; 
-    private int Numero, CVC, numeroPasaporteVinculado; 
+    private String Numero, CVC, numeroPasaporteVinculado; 
     private double dinero; 
 
-    public Tarjeta(int Numero, int numeroPasaporteVinculado, double dinero,  int CVC) {
+    public Tarjeta(String Numero, String numeroPasaporteVinculado, double dinero,  String CVC) {
         this.Numero = Numero;
         this.CVC = CVC;
         this.numeroPasaporteVinculado = numeroPasaporteVinculado;

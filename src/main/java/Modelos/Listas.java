@@ -24,7 +24,8 @@ public class Listas {
     public static ArrayList<Trabajador> listaAdministradores = new ArrayList<Trabajador>();
     public static ArrayList<Trabajador> listaGerentes = new ArrayList<Trabajador>();
     public static ArrayList<Cliente> listaClientes = new ArrayList<Cliente>();
-    public static ArrayList<String> CiudadesDisponibles = new ArrayList<String>();
+    public static ArrayList<String> CiudadesOrigen = new ArrayList<String>();
+    public static ArrayList<String> CiudadesDestino = new ArrayList<String>();
     public static ArrayList<Tarjeta> listaTarjetas = new ArrayList<Tarjeta>();
     public static ArrayList<Pasaporte> pasaportes = new ArrayList<Pasaporte>(); 
     public static ArrayList<String> listaPaises = new ArrayList<String>();
@@ -57,8 +58,8 @@ public class Listas {
         return listaClientes;
     }
 
-    public static ArrayList<String> getCiudadesDisponibles() {
-        return CiudadesDisponibles;
+    public static ArrayList<String> getCiudadesOrigen() {
+        return CiudadesOrigen;
     }
     
     public static void llenarPaises(){

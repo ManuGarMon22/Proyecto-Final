@@ -19,7 +19,10 @@ public class Ejecutador {
 
     
     public void Inicio(){
+        
+        Listas.llenarPaises();
         double precio = 12.4;
+        
         Vuelo x= new Vuelo("E23", "a43","Guatemala", "Barcelonaa", precio  , dia() );
         Vuelo y= new Vuelo("E13", "213","Guatemala", "Madrid", precio  , dia() );
         Listas.listaVuelos.add(x);

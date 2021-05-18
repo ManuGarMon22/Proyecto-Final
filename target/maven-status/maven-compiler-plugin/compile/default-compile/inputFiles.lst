@@ -4,11 +4,13 @@
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/VentanaAdmin.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/VentanaDatosParaBoleto.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Modelos/ArticulosDeViaje/Pasaporte.java
+/home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/EleccionAerolinea.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/CrearVuelo.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/CrearTrabajador.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Modelos/Reservacion.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Archivos/SubirArchivos.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Enums/TipoTrabajador.java
+/home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/CrearAeropuerto.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Modelos/Vuelo.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Main/Main.java
 /home/manu/NetBeansProjects/Aeropuerto/src/main/java/Frames/VentanaAsientos.java

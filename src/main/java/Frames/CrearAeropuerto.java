@@ -33,6 +33,20 @@ public class CrearAeropuerto extends javax.swing.JDialog {
         
         return lista;
     }
+    
+    public static boolean compararAeropuerto(String[]datos){
+        boolean x =false;
+        for(Aeropuerto a : Listas.listaAeropuetos)
+            if(a.getNombre().equals(datos[0])&& a.getCiudad().equals(datos[1])){
+                if(a.getPais().equals(datos[2])){
+                x=true;
+                break;
+                }
+            
+            }
+        
+        return x;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -160,10 +174,12 @@ public class CrearAeropuerto extends javax.swing.JDialog {
         if(datos[0].equals("")||datos[1].equals("")||datos[2]==null){
             JOptionPane.showMessageDialog(null, "Favor de llenar todos los campos");
         }else{
-            Aeropuerto a = CrearObjeto.aeropuertoNuevo(datos);
-            Listas.listaAeropuetos.add(a);
-            JOptionPane.showMessageDialog(null, "Aeropuerto Creado con exito");
-            dispose();
+            if(!this.compararAeropuerto(datos)){
+                Aeropuerto a = CrearObjeto.aeropuertoNuevo(datos);
+                Listas.listaAeropuetos.add(a);
+                JOptionPane.showMessageDialog(null, "Aeropuerto Creado con exito");
+                dispose();
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

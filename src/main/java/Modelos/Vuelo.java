@@ -23,7 +23,9 @@ public class Vuelo implements Serializable{
     public Vuelo(String codigoVuelo, String codigoAvion, String origen, String destino, double precio, LocalDate diaVuelo) {
         this.codigoVuelo = codigoVuelo;
         this.origen = origen;
+        Listas.CiudadesOrigen.add(origen);
         this.destino = destino;
+        Listas.CiudadesDestino.add(destino);
         this.CodigoAvion = codigoAvion;
         this.precio = precio;
         this.diaVuelo = diaVuelo;

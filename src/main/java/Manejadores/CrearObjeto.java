@@ -85,7 +85,14 @@ public class CrearObjeto {
     }
 
     public static Tarjeta tarjetaNueva(String[] campos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Tarjeta tar = null;
+             if(campos.length ==4){
+                double dinero = Double.parseDouble(campos[3]);
+                tar = new Trajeta(campos[], campos[2], dinero, campos[4]);
+                 
+             }
+                
+         return tar;       
     }
 
     public static Pasaporte pasaporteNuevo(String[] campos) {
