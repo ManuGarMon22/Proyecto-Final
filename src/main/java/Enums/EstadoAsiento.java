@@ -10,5 +10,5 @@ package Enums;
  * @author manu
  */
 public enum EstadoAsiento {
-    OCUPADO, DESOCUPADO;
+    OCUPADO, DISPONIBLE;
 }

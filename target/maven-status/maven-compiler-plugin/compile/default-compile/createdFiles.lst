@@ -41,6 +41,7 @@ Modelos/Aerolinea.class
 Frames/CrearAeropuerto$1.class
 Manejadores/Ejecutador.class
 Frames/LoginPasaportes$3.class
+Frames/AsientosImagen$2$1.class
 Frames/VentanaOperador$4.class
 Frames/CrearAerolinea$3.class
 Frames/VentanaDatosParaBoleto$4.class
@@ -52,6 +53,7 @@ Enums/EstadoVuelo.class
 Archivos/LeerArchivosTexto.class
 Frames/EleccionAerolinea$4.class
 Frames/LoginPasaportes$2.class
+Frames/AsientosImagen$2.class
 Frames/VentanaAsientos.class
 Frames/VentanaCompraBoletos$4.class
 Frames/VentanaAdmin$4.class
@@ -76,11 +78,11 @@ Frames/LoginPasaportes.class
 Frames/VentanaCompraBoletos$5.class
 Archivos/SubirArchivos.class
 Main/Main.class
+Frames/VentanaCompraBoletos$8.class
 Frames/AsientosImagen.class
 Frames/AnimacionVuelo.class
 Modelos/Aeropuerto.class
 Frames/CrearAeropuerto$4$1.class
-Frames/AsientosImagen$1$1.class
 Modelos/Persona/Cliente.class
 Frames/CrearAeropuerto$2.class
 Frames/CrearVuelo$3.class
@@ -89,6 +91,7 @@ Modelos/Vuelo.class
 Modelos/ArticulosDeViaje/Tarjeta.class
 Frames/VentanaGerencia$1.class
 Frames/VentanaAdmin.class
+Modelos/Distancia.class
 Modelos/Persona/Persona.class
 Frames/VentanaCompraBoletos$2.class
 Frames/VentanaAdmin$5.class

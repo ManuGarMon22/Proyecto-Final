@@ -29,7 +29,7 @@ public class Ejecutador {
         Listas.listaVuelos.add(y);
         
         char[]contrasenia = {'w','r'};
-        Trabajador admin = new Trabajador("1", "Manuel", "Garcia",contrasenia);
+        Trabajador admin = new Trabajador("1", "wr", "Garcia",contrasenia);
         Listas.listaAdministradores.add(admin);
         
         Acceso acceso = new Acceso();

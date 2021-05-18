@@ -113,7 +113,8 @@ public class LeerArchivosTexto {
             }
         }else if (lineaDividida[6].equals(DISTANCIA)){
             String[] campos = separarCampos(DISTANCIA.length()+1 , linea);
-            Aeropuerto distancia = CrearObjeto.aeropuertoNuevo(campos);
+            Distancia distancia = CrearObjeto.distanciaNueva(campos);
+            Listas.distancias.add(distancia);
             objetos.add(distancia);
         }else if (lineaDividida[7].equals(RENOVACION_PASAPORTE)){
             String[] campos = separarCampos(RENOVACION_PASAPORTE.length()+1 , linea);
@@ -127,17 +128,13 @@ public class LeerArchivosTexto {
             
         }else if (lineaDividida[8].equals(RESERVACION)){
             String[] campos = separarCampos(RESERVACION.length()+1 , linea);
-            
             Reservacion reservacion = CrearObjeto.reservacionNueva(campos);
             if (reservacion != null){
             Listas.listaReservaciones.add(reservacion);
             objetos.add(reservacion);
             }
             
-        }
-        
-    
-        
+        }    
     }
     
     public String[] separarCampos(int cantidadLetras, String linea){
@@ -147,10 +144,4 @@ public class LeerArchivosTexto {
         return campos;
     }
     
-    void buscarAeropuerto(){
-    }
-    
-    void renovarPasaporte(){
-        
-    }
 }

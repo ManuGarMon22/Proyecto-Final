@@ -5,6 +5,7 @@
  */
 package Frames;
 
+import Enums.EstadoAsiento;
 import Modelos.Asiento;
 import Modelos.Avion;
 import java.awt.*;
@@ -19,10 +20,8 @@ import javax.swing.*;
 public class VentanaAsientos extends JPanel  {
     
     private Avion avion;
-    
-    private int  grama =0, agua=0, desierto=0;
-    private int casillasHabilitadas, casillasCreadas;
     private JButton botones[]; // arreglo de botones
+    private JLabel pasillo[];
     
     private GridLayout cuadricula; 
    
@@ -30,45 +29,59 @@ public class VentanaAsientos extends JPanel  {
     // constructor
     public VentanaAsientos(Avion j){
         this.avion = j;
-        this.setLayout(null);
-        this.setBounds(0,0, 650, 630 ); // establece el tamaño del marco
-        
-        
-        
         ColocarBotones();
-        HabilitarCasillasIniciales();
+        this.setBounds(0,0, 450, 550);
     } 
     
     private void ColocarBotones(){
         Asiento asientos[]= avion.getAsientos();
-        int x = this.avion.getFilas();
-        int y = this.avion.getColumnas();
-        int total = x*y;
-        int recorrido; 
-        
-        cuadricula = new GridLayout((x+1), y ); 
-        setLayout( cuadricula );         
-        botones = new JButton[total]; // crea arreglo de objetos JButton
-        for ( int i = 0; i < 60; i++ ){
-            botones[i] = new JButton();     
-            botones[i].setEnabled(true);
-            this.add( botones[i] ); // agrega boton a objeto JFrame
+        int x = 50;
+        int y = 5;
+        int totalAsientos = asientos.length;
+        int asientosColocados=0; 
+        cuadricula = new GridLayout(x, y); 
+        this.setLayout( cuadricula );         
+ 
+        botones = new JButton[totalAsientos];
+        pasillo = new JLabel[50];
+        // crea arreglo de objetos JButton
+        for ( int i = 0; i < 50; i++ ){
+            for(int j = 0; j <2 ; j++){
+                if(asientosColocados<totalAsientos){
+                    botones[asientosColocados] = new JButton("No. "+(asientosColocados+1));
+                    superficie(asientos[asientosColocados],botones[asientosColocados]);
+                    botones[asientosColocados].setEnabled(true);
+                    this.add( botones[asientosColocados] ); // agrega boton a objeto JFrame
+                    asientosColocados+=1;
+                }
+            }
+            if(asientosColocados<totalAsientos){
+                pasillo[i] = new JLabel("pasillo");
+                
+                this.add(pasillo[i]);
+            }
+            for(int j = 0; j <2 ; j++){
+                if(asientosColocados<totalAsientos){
+                    botones[asientosColocados] = new JButton("No. "+(asientosColocados+1));
+                    botones[asientosColocados].setText("No." +asientosColocados);
+                    superficie(asientos[asientosColocados],botones[asientosColocados]);
+                    botones[asientosColocados].setEnabled(true);
+                    this.add( botones[asientosColocados] ); // agrega boton a objeto JFrame
+                    asientosColocados +=1;
+                }
+            }
+                               
         } // fin de for
     }
     
     
-    
-    public void HabilitarCasillasIniciales(){
-        for (int i = 0; i < 25; i++) {
-            botones[i].setEnabled(true);
-            
-        }
-        this.casillasHabilitadas = 25;
+    public void superficie(Asiento a, JButton b){
+        if(!a.getEstado()){
+            b.setBackground(Color.RED);
+        }else  
+        if(a.getEstado()){
+            b.setBackground(Color.GREEN);
     }
-    
-    public void Superficie(int x, int asiento){
-        
-    }
-  
+    }     
     
 }

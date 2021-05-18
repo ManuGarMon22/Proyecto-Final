@@ -62,7 +62,7 @@ public class CreadorDeBinarios {
             salida.writeObject(objetos);
             salida.close();
             }else if(objetos instanceof Reservacion ){
-                fileOutput = new FileOutputStream(FILE_RESERVACION+"/"+((Reservacion) objetos).getNoPasaporte());
+                fileOutput = new FileOutputStream(FILE_RESERVACION+"/"+((Reservacion) objetos).getPasaporte());
                 salida = new ObjectOutputStream(fileOutput);
             salida.writeObject(objetos);
             salida.close();
@@ -76,8 +76,14 @@ public class CreadorDeBinarios {
                 salida = new ObjectOutputStream(fileOutput);
             salida.writeObject(objetos);
             salida.close();
+            }else if(objetos instanceof Distancia){
+                fileOutput = new FileOutputStream(FILE_DISTANCIAS+"/"+((Distancia) objetos).getDestino());
+                salida = new ObjectOutputStream(fileOutput);
+            //salida.writeObject(objetos);
+            salida.close();
+            
             }else{
-                System.out.println("no se guardo archivo");
+                
             }
             
             

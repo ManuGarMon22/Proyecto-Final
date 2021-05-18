@@ -29,6 +29,7 @@ public class Avion implements Serializable{
         this.ubicacion = ubicacion;
         this.asientos = new Asiento[capacidad];
         this.estado = EstadoAvion.SIN_VUELO;
+        this.llenarAsientos();
     }
 
     public int getFilas() {
@@ -79,6 +80,12 @@ public class Avion implements Serializable{
         this.aerolinea = aerolinea;
     }
     
+    public void llenarAsientos(){
+        for(int i =0; i < this.asientos.length; i++){
+            String n = ""+i; 
+            asientos[i] = new Asiento(n);
+        }
+    }
     
     
     

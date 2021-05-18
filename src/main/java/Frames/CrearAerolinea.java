@@ -37,6 +37,12 @@ public class CrearAerolinea extends javax.swing.JDialog {
         
         return lista;
     }
+    
+    public boolean aerolineaExiste(){
+        boolean existe = true;
+        
+        return existe;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -155,6 +161,7 @@ public class CrearAerolinea extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String nombre = this.jTextField1.getText();
+        
         for(Aerolinea a: Listas.listaAerolineas){
             if(a.getNombre().equals(nombre)){
                 JOptionPane.showMessageDialog(null, "Esta Aerolinea ya exite, por favor Use otro Nombre ");
@@ -212,6 +219,7 @@ public class CrearAerolinea extends javax.swing.JDialog {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

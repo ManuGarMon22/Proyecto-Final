@@ -9,6 +9,8 @@ import Modelos.Listas;
 import Modelos.Vuelo;
 import Enums.*;
 import Modelos.Aerolinea;
+import Modelos.Avion;
+import java.io.FileNotFoundException;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.table.DefaultTableModel;
@@ -103,10 +105,21 @@ public class VentanaOperador extends JFrame {
             break;
             }
         }
-        
-    
     }
 
+    
+    public Avion buscarAvion(String x){
+        Avion avion = null;
+        for(Avion r: Listas.listaAviones){
+            if(r.getCodigo().equals(x)){
+            avion = r;
+            }
+        }
+        
+        return avion;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -351,7 +364,11 @@ public class VentanaOperador extends JFrame {
     }//GEN-LAST:event_jMenuItemOperadorActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        
+        String avion = this.vueloSeleccionado.getCodigoAvion();
+        Avion r = this.buscarAvion(avion);
+        AsientosImagen asisentos = new AsientosImagen(this, true, r);
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButtonVolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolarActionPerformed

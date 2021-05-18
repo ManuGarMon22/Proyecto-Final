@@ -10,6 +10,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import Modelos.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,6 +21,7 @@ public class VentanaCompraBoletos extends JFrame {
     private JFrame acceso;
     private DefaultTableModel modeloDisponibilidad = new DefaultTableModel();
     private int numeroOpcion;
+    private String ciudadOrigen, ciudadDestino;
     
     public VentanaCompraBoletos(JFrame acceso) {
         initComponents();
@@ -52,6 +54,7 @@ public class VentanaCompraBoletos extends JFrame {
     
     
     
+    
     private DefaultComboBoxModel llenarAnios(){
         DefaultComboBoxModel listaAnios = new DefaultComboBoxModel();
        
@@ -63,6 +66,38 @@ public class VentanaCompraBoletos extends JFrame {
         return listaAnios;   
     }
     
+    public DefaultComboBoxModel listaAerolineas(){
+        DefaultComboBoxModel x = new DefaultComboBoxModel();
+        
+        for(Aerolinea a: Listas.listaAerolineas){ 
+            x.addElement(a);
+        }    
+        return x;
+    }
+    
+    public DefaultComboBoxModel listaCiudades(String w){
+        DefaultComboBoxModel x = new DefaultComboBoxModel();
+        ArrayList<String> nombres = new ArrayList<String>();
+        ArrayList<String> ciudades = new ArrayList<String>();
+        for(Aerolinea a: Listas.listaAerolineas){ 
+            nombres.add(a.getAeropuerto());
+        }    
+        
+        for(Aeropuerto r: Listas.listaAeropuetos){
+            for(String l: nombres){
+                if(r.getNombre().equals(l)){
+                    ciudades.add(r.getCiudad());
+                }
+            }
+        }
+        
+        for(String s : ciudades){
+            x.addElement(s);
+        }
+        
+        return x;
+    }
+    
     private void llenarListaVuelos(){
     this.tablaOpciones.setModel(modeloDisponibilidad);
         modeloDisponibilidad.addColumn("Codigo de vuelo");
@@ -72,7 +107,13 @@ public class VentanaCompraBoletos extends JFrame {
         modeloDisponibilidad.addColumn("Precio de Boleto");
         modeloDisponibilidad.addColumn("Fecha");
         
+        for(Vuelo v : Listas.listaVuelos){
+            if(v.getOrigen().equals("")){}
+        }
+        
     }
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -151,6 +192,7 @@ public class VentanaCompraBoletos extends JFrame {
                 .addContainerGap())
         );
 
+        jComboBox1.setModel(listaAerolineas());
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -178,6 +220,11 @@ public class VentanaCompraBoletos extends JFrame {
         jLabel5.setText("Cantidad de Pasajeros:");
 
         jButtonBuscar.setText("Buscar");
+        jButtonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscarActionPerformed(evt);
+            }
+        });
 
         tablaOpciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -340,7 +387,9 @@ public class VentanaCompraBoletos extends JFrame {
     }//GEN-LAST:event_ItemSalirActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
+        String w = this.jComboBox1.getSelectedItem().toString();
+        this.jComboBox2.setModel(listaCiudades(w));
+        this.jComboBox4.setModel(listaCiudades(w));
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -352,6 +401,11 @@ public class VentanaCompraBoletos extends JFrame {
        ventana.setVisible(true);
        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscarActionPerformed
+        this.ciudadOrigen = this.jComboBox2.getSelectedItem().toString();
+        this.ciudadDestino = this.jComboBox4.getSelectedItem().toString();
+    }//GEN-LAST:event_jButtonBuscarActionPerformed
 
     /**
      * @param args the command line arguments

@@ -7,7 +7,9 @@ package Frames;
 
 import Manejadores.CrearObjeto;
 import Modelos.*;
+import java.awt.Frame;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,13 +17,15 @@ import javax.swing.JOptionPane;
  * @author manu
  */
 public class CrearAvion extends javax.swing.JDialog {
-
+    
+    private Frame principal;
     /**
      * Creates new form CrearAvion
      */
     public CrearAvion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.principal = parent;
         this.jComboBox2.setEnabled(false);
     }
     
@@ -233,13 +237,15 @@ public class CrearAvion extends javax.swing.JDialog {
         campos[3] = this.cant.getText();
         campos[4]= this.gas.getText();
         campos[5]= this.consumo.getText();
-        if(campos[2].equals("")||campos[3].equals("")||campos[4].equals("")||campos[5].equals("")){ 
+        if(campos[2].equals("")||campos[3].equals("")||campos[4].equals("")||campos[5].equals("")||campos[0] == null ||campos[1]== null){ 
             JOptionPane.showMessageDialog(null, "POr favor llenar todos los campos");
         }else{
             if(!concidenciaCodigo(campos[2])){
                       
                 Avion a = CrearObjeto.avionNuevo(campos);
                 Listas.listaAviones.add(a);
+                AsientosImagen i = new AsientosImagen(this.principal, true ,a);
+                i.setVisible(true);
                 JOptionPane.showMessageDialog(null, "Avion creado con exito");
                 dispose(); 
             

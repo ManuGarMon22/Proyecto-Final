@@ -35,6 +35,7 @@ public class Vuelo implements Serializable{
 
     
     public void buscarAero(String codigo){
+        this.nombreAerolinea = null;
         for(Avion a: Listas.listaAviones){
             if(a.getCodigo().equals(codigo)){
                 this.nombreAerolinea = a.getAerolinea();

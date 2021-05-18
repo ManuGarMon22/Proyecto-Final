@@ -6,20 +6,21 @@
 package Modelos;
 
 import Enums.EstadoAsiento;
+import java.io.Serializable;
 
 /**
  *
  * @author manu
  */
-public class Asiento {
+public class Asiento implements Serializable {
     
     private String numero;
-    private EstadoAsiento estado; 
+    private boolean disponible; 
     
 
     public Asiento(String numero) {
         this.numero = numero;
-        this.estado = estado.DESOCUPADO;
+        this.disponible = true;
     }
 
     public String getNumero() {
@@ -30,12 +31,12 @@ public class Asiento {
         this.numero = numero;
     }
 
-    public EstadoAsiento getEstado() {
-        return estado;
+    public boolean getEstado() {
+        return disponible;
     }
 
-    public void setEstado(EstadoAsiento estado) {
-        this.estado = estado;
+    public void setEstado(boolean estado) {
+        this.disponible = estado;
     }    
 
     @Override

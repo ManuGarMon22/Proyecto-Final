@@ -14,50 +14,50 @@ import java.io.Serializable;
  */
 public class Reservacion implements Serializable{
     
-    private Pasaporte pasaporte;
-    private Vuelo vuelo;
-    private Tarjeta tarjeta;
-    private Asiento asiento;
-    
-    public Reservacion(){
-    
+    private String pasaporte, vuelo, tarjeta, asiento;
+
+    public Reservacion(String pasaporte, String vuelo, String tarjeta, String asiento) {
+        this.pasaporte = pasaporte;
+        this.vuelo = vuelo;
+        this.tarjeta = tarjeta;
+        this.asiento = asiento;
     }
 
-    public Pasaporte getPasaporte() {
+    public String getPasaporte() {
         return pasaporte;
     }
 
-    public void setPasaporte(Pasaporte pasaportes) {
-        this.pasaporte = pasaportes;
+    public void setPasaporte(String pasaporte) {
+        this.pasaporte = pasaporte;
     }
 
-    public Vuelo getVuelo() {
+    public String getVuelo() {
         return vuelo;
     }
 
-    public void setVuelo(Vuelo vuelo) {
+    public void setVuelo(String vuelo) {
         this.vuelo = vuelo;
     }
 
-    public Tarjeta getTarjeta() {
+    public String getTarjeta() {
         return tarjeta;
     }
 
-    public void setTarjeta(Tarjeta tarjeta) {
+    public void setTarjeta(String tarjeta) {
         this.tarjeta = tarjeta;
     }
 
-    public Asiento getAsiento() {
+    public String getAsiento() {
         return asiento;
     }
 
-    public void setAsiento(Asiento asiento) {
+    public void setAsiento(String asiento) {
         this.asiento = asiento;
     }
     
-    public String getNoPasaporte(){
-        return this.getPasaporte().getNumero();
-    }
+   
+
+   
     
     
     

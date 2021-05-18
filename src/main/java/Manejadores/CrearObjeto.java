@@ -70,6 +70,7 @@ public class CrearObjeto {
         Aeropuerto aeropuerto = null;
         if(campos.length ==3){
         aeropuerto = new Aeropuerto(campos[0], campos[1], campos[2]);
+        Listas.CiudadesOrigen.add(campos[1]);
         }
         return aeropuerto;
     }
@@ -87,8 +88,8 @@ public class CrearObjeto {
     public static Tarjeta tarjetaNueva(String[] campos) {
         Tarjeta tar = null;
              if(campos.length ==4){
-                double dinero = Double.parseDouble(campos[3]);
-                tar = new Tarjeta(campos[1], campos[2], dinero, campos[4]);
+                double dinero = Double.parseDouble(campos[2]);
+                tar = new Tarjeta(campos[0], campos[1], dinero, campos[3]);
                  
              }
                 
@@ -111,8 +112,12 @@ public class CrearObjeto {
     }
 
     public static Reservacion reservacionNueva(String[] campos) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+       Reservacion re =  null;
+       if(campos.length==4){
+           re = new Reservacion(campos[0], campos[1], campos[2], campos[3]);
+       }
+       return re;
+    }    
     
     public static void renovarPasaporte(String[] campos) throws IOException{
         if(campos.length ==2){
@@ -127,6 +132,14 @@ public class CrearObjeto {
         } else{
             JOptionPane.showMessageDialog(null, "No se renovo el pasaporte");
         }
+    }
+    
+    public static Distancia distanciaNueva(String[] campos){
+        Distancia dis = null;
+        if(campos.length == 3){
+            dis = new Distancia(campos[0], campos[1],campos[2]);
+        }
+        return dis;
     }
     
     
