@@ -33,15 +33,15 @@ public class Tarjeta implements Serializable {
         return estado;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return Numero;
     }
 
-    public int getCVC() {
+    public String getCVC() {
         return CVC;
     }
 
-    public int getNumeroPasaporteVinculado() {
+    public String getNumeroPasaporteVinculado() {
         return numeroPasaporteVinculado;
     }
 

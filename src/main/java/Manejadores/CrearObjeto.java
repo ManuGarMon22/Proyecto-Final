@@ -88,7 +88,7 @@ public class CrearObjeto {
         Tarjeta tar = null;
              if(campos.length ==4){
                 double dinero = Double.parseDouble(campos[3]);
-                tar = new Trajeta(campos[], campos[2], dinero, campos[4]);
+                tar = new Tarjeta(campos[1], campos[2], dinero, campos[4]);
                  
              }
                 
